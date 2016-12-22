@@ -1,0 +1,8 @@
+= Asciidoctor
+
+* http://asciidoctor.org[http://asciidoctor.org]
+* Automatically refresh asciidoctor files when updated:
+ `fswatch -0 &lt;adoc-file&gt; | xargs -0 -n 1 -I {} ./asciidoctor-diagram.sh {}`
+ where asciidoctor-diagram.sh is:
+ `#!/bin/bash`
+ `asciidoctor -r asciidoctor-diagram $@`

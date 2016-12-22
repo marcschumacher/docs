@@ -1,0 +1,53 @@
+= GIT
+
+* Only diff file name: `git diff --name-only`
+
+* Branch locally from master using the console and cd to the newly created branch: `git checkout -b <branch> master`
+
+* Connect local branches with remote GIT repo
+** Using command directly: `git push --set-upstream origin <branch>` or use the alias pushd
+** Creating an alias in the configuration: `git config --global --add alias.pushd '!git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'` and running `git pushd`
+
+* Renaming local branch while being in any branch: `git branch -m <oldname> <newname>`
+
+* Renaming local currently selected branch: `git branch -m <newname>`
+
+* Create tag and push it to remote:
+** `git tag -s -m „My release`
+** `git push --tags`
+
+* Remove tag
+** local: `git tag -d <tagname>`
+** remote: `git push origin :refs/tags/<tagname>`
+
+* Edit the comment of the last commit: `git commit --amend`
+
+* Delete branch: `git branch -d <branchname>`
+
+* Show the last activities in git, instead of only the last commits to the current branch: `git reflog`
+
+* Add all dirty (not new!) files and commit: `git commit -a`
+
+* Reset the current status to a specific commit without removing files or cleaning up the repo: `git reset <commit/HEAD@number/HEAD~number>`
+
+* Reset the current status to a specific commit removing files which are were not in the repo: `git reset --hard <commit/HEAD@nubmer/HEAD~number>`
+
+* Interactive rebasing and editing of commit messages: `git rebase -i <Starting point, eg. `HEAD~2` for last 2 commits>`
+
+* Show commits, commit messages and filesname for current repo: `git log --name-only --oneline`
+
+* Extract ticket number out of feature branch (eg. out of `feature/PPD-123-my-branch` you get `PPD-123`): `git rev-parse --abbrev-ref HEAD|sed 's/feature\/\([A-Z]*-[0-9]*\)[^0-9]*$/\1/'`
+
+* Revert the last (local) commit, which has not been pushed yet: `git reset --soft HEAD~1`
+
+* Show diff between last commit and the current state of the file system: `git diff HEAD~1` or `git difftool HEAD~1` if you have a specific difftool specified in the configuration
+
+* Change upstream branch to existing branch on remote repo: `git branch <branch_name> --set-upsteam-to <new-upstream-branch-name>`
+
+* Change upstream branch to not existing branch on remote repo: `git push -u origin <branch>`
+
+* To which remote repositories is the local repo connected: `git remote show origin`
+
+* Remove a local branch: `git branch -d <local branch>`
+
+* To remove a single (local) file from the repo use the parameter `--cached`, ie. `git rm --cached myfile.txt` for files or `git rm --cached -r mydirectory` for folders

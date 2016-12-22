@@ -1,0 +1,9 @@
+= curl
+
+* For a RESTful HTTP POST containing XML:
+`curl -X POST -d @filename http://example.com/path/to/resource --header &quot;Content-Type:text/xml&quot;`
+* or for JSON, use this:
+`curl -X POST -d @filename http://example.com/path/to/resource --header &quot;Content-Type:application/json&quot;`
+This will read the contents of file named "filename" and send it as the post request.
+* Only get http code for URL (see http://stackoverflow.com/questions/6136022/script-to-get-the-http-status-code-of-a-list-of-urls[http://stackoverflow.com/questions/6136022/script-to-get-the-http-status-code-of-a-list-of-urls]):
+`curl -o /dev/null --silent --head --write-out &#39;%{http_code}\n&#39; <url>`

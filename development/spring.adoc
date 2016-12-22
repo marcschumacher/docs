@@ -1,0 +1,5 @@
+= Spring
+
+== Spring Boot
+
+* Debugging auto configuration and other things: Add `--debug` to Spring Boot startup command or `-Ddebug` to java call

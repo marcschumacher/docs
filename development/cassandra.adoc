@@ -1,0 +1,5 @@
+= Cassandra
+
+* How to check if an instance is running well?
+** Example: `curl -L http://<cassandra-host>:2379/v2/keys/cassandra/<cassandra-cluster-name>/seeds`
+** Example: `curl -L http://127.0.0.1:2379/v2/keys/cassandra/test/seeds`

@@ -1,0 +1,37 @@
+= Maven
+
+* Find the configuration under: `~/.m2/settings.xml`
+
+* Use the offline mode with the parameter: `-o`
+
+* Run a specific test: `mvn verify -Pintegration-test -Dit.test=<classname of test>`
+
+* Specify port for Tomcat: `mvn -Dmaven.tomcat.port=8181 tomcat:run-war`
+
+* Remote debug: `mvnDebug tomcat7:run-war`
+
+* Skip test scripts: `mvn install -Dmaven.test.skip=true`
+
+* To change the `mvnDebug` port, you need to adjust the shellscript `mvnDebug` directly: `MAVEN_DEBUG_OPTS=&quot;-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=${DEBUG_PORT:-8000}&quot;`
+
+* Change the Maven JDK version (in MacOS)
+** `sudo ln -s /Library/Java/JavaVirtualMachines/1.7.0.jdk /System/Library/Java/JavaVirtualMachines/1.7.0.jdk`
+** `sudo mv /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK.orig`
+** `sudo ln -s /System/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK`
+
+* Execute single test: `mvn -Dtest=<class name> test`
+
+* To activate the headless mode (see https://somethingididnotknow.wordpress.com/2014/07/23/forkedbooter-steals-window-focus-on-mac-os-while-maven-is-running/[https://somethingididnotknow.wordpress.com/2014/07/23/forkedbooter-steals-window-focus-on-mac-os-while-maven-is-running/]), add the following line into `.bashrc` or `.zshrc`: `export JAVA_TOOL_OPTIONS=-Djava.awt.headless=true`
+
+* Set new password (encrypted, see https://maven.apache.org/guides/mini/guide-encryption.html[https://maven.apache.org/guides/mini/guide-encryption.html]):
+** run `mvn --encrypt-password &lt;your new password&gt;`
+** change all occurrences in `~/.m2/settings.xml` with your password with the output of the previous command
+
+* Run a spring boot project:
+`mvn spring-boot:run`
+
+* Create testcoverage report with Jacoco: `mvn test jacoco:report`
+
+* Build Docker image: `mvn verify docker:build`
+
+* To disable the restriction of having to use a specific version of Maven (which is defined in the `pom.xml`) just add `enforcer.skip`: `mvn -Denforcer.skip clean install`

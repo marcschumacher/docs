@@ -1,0 +1,5 @@
+= Taskwarrior
+
+* Add relative due date: `task 1 mod due:tomorrow+1d+9h` = the day after tomorrow at 9:00h
+* `task rc.verbose=nothing rc.report.list.columns=due.countdown rc.report.list.labels=due $ID list`
+* Script to get notifications for overdue tasks: <to be done>

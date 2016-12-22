@@ -1,0 +1,107 @@
+= Presentations
+
+* http://www.infoq.com/presentations/spring-boot-rest-microservices[Creating REST-ful, Hypermedia-based Microservices with Spring Boot]
+
+= Links
+
+* UML Sequenzdiagramme im Web: https://www.websequencediagrams.com/[https://www.websequencediagrams.com/]
+* UML Diagramme und Strukturzeichnungen: https://www.draw.io[https://www.draw.io]
+* http://www.infoq.com[http://www.infoq.com]
+* http://stackexchange.com/[http://stackexchange.com/]
+* http://security.stackexchange.com/[http://security.stackexchange.com/]
+* http://12factor.net/[http://12factor.net/]
+* http://www.javaworld.com/article/2077793/core-java/exceptions-for-action.html?page=3[http://www.javaworld.com/article/2077793/core-java/exceptions-for-action.html?page=3]
+* https://www.about-payments.com/knowledge-base[https://www.about-payments.com/knowledge-base]
+* http://aws.amazon.com/de/architecture/[http://aws.amazon.com/de/architecture/]
+* http://projectlombok.org/[http://projectlombok.org/]
+* https://github.com/swagger-api/swagger-core/wiki/Java-JAXRS-Quickstart[https://github.com/swagger-api/swagger-core/wiki/Java-JAXRS-Quickstart]
+* https://www.elastic.co/products/kibana[https://www.elastic.co/products/kibana]
+* http://www.dzone.com[http://www.dzone.com]
+* Spring
+** Boot
+** Data
+** REST
+** AMQP
+** Integration
+** XD
+* Scala
+** http://simplyscala.com[http://simplyscala.com]
+** Scala for Java Refugees
+** http://www.scala-lang.org[http://www.scala-lang.org]
+** General Scala: http://docs.scala-lang.org/
+** First steps in Scala: http://docs.scala-lang.org/cheatsheets/
+** Java – Scala statements side by side: http://techblog.realestate.com.au/java-to-scala-cheatsheet/
+** Performance of collection classes: http://docs.scala-lang.org/overviews/collections/performance-characteristics.html
+** Purely functional data structures in Scala: http://www.slideshare.net/vkostyukov/purely-functional-data-structures-in-scala-26175521
+** http://www.javacodegeeks.com/2015/03/scala-days-6-of-the-best-talks-you-probably-missed.html[http://www.javacodegeeks.com/2015/03/scala-days-6-of-the-best-talks-you-probably-missed.html]
+** https://thenewcircle.com/s/post/1112/the\_typeclass\_pattern\_in\_scala\_an\_alternative\_to\_inheritance[https://thenewcircle.com/s/post/1112/the\_typeclass\_pattern\_in\_scala\_an\_alternative\_to\_inheritance]
+* http://swagger.io/ (REST[http://swagger.io/ (REST] Doku)
+* Präsentationen
+** http://lab.hakim.se/reveal-js/#/[http://lab.hakim.se/reveal-js/#/]
+** http://slides.com[http://slides.com]
+* Microservices
+** http://www.infoq.com/news/2015/03/microservices-architecture-gilt[http://www.infoq.com/news/2015/03/microservices-architecture-gilt]
+* Docker/Vagrant etc.
+** Manipulation von Konfigurationsdateien: http://augeas.net/
+** https://coreos.com/using-coreos/[https://coreos.com/using-coreos/]
+** https://github.com/jpetazzo/nsenter[https://github.com/jpetazzo/nsenter]
+** Videos
+*** Docker &amp; JBoss: https://www.youtube.com/watch?v=4uQ6gR_xZhE
+*** Package JEE application with Docker and Kubernetes: https://www.youtube.com/watch?v=OEflMTJUV4c
+*** CoreOS: https://www.youtube.com/watch?v=VF5ecG6vdN8
+** http://kubernetes.io/[http://kubernetes.io/]
+** http://arquillian.org/ und http://arquillian.org/modules/cube-extension/[http://arquillian.org/ und http://arquillian.org/modules/cube-extension/]
+** https://www.openshift.com[https://www.openshift.com]
+** Logging auf Docker
+*** http://info.logentries.com/logging-on-docker-recording[http://info.logentries.com/logging-on-docker-recording]
+*** https://github.com/nearform/docker-logentries[https://github.com/nearform/docker-logentries]
+* Heise Developer Podcast - Ressourcen (http://www.heise.de/developer/artikel/Episode-46-Ressourcen-fuer-Softwarearchitekten-2299439.html[http://www.heise.de/developer/artikel/Episode-46-Ressourcen-fuer-Softwarearchitekten-2299439.html])
+** Podcasts
+*** http://www.se-radio.net/[http://www.se-radio.net/]
+*** http://www.sei.cmu.edu/podcasts/[http://www.sei.cmu.edu/podcasts/]
+*** http://www.javaposse.com/[http://www.javaposse.com/]
+*** https://www.innoq.com/de/timeline/?utf8=%E2%9C%93&type=podcast\_episodes&date\_min=2013&date\_max=2014&lang=de%2Cen&person=&tag=[https://www.innoq.com/de/timeline/?utf8=%E2%9C%93&type=podcast\_episodes&date\_min=2013&date\_max=2014&lang=de%2Cen&person=&tag=]
+*** http://blog.cognitect.com/cognicast/[http://blog.cognitect.com/cognicast/]
+*** https://thechangelog.com/podcast/[https://thechangelog.com/podcast/]
+*** http://www.computer.org/portal/web/computingnow/onarchitecture[http://www.computer.org/portal/web/computingnow/onarchitecture]
+*** http://cea.podbean.com/[http://cea.podbean.com/]
+*** Zusätzliche
+**** http://www.scalawags.tv/ [http://www.scalawags.tv/ ]
+** Kurse
+*** https://www.coursera.org/course/progfun (Scala[https://www.coursera.org/course/progfun (Scala])
+*** https://www.coursera.org/course/reactive[https://www.coursera.org/course/reactive]
+*** https://itunes.stanford.edu/[https://itunes.stanford.edu/]
+** Videos
+*** http://www.infoq.com/presentations/[http://www.infoq.com/presentations/]
+*** http://www.theserverside.com/[http://www.theserverside.com/]
+*** https://www.youtube.com/watch?v=lFGIVHeQPbg[https://www.youtube.com/watch?v=lFGIVHeQPbg]
+*** http://www.infoq.com/presentations/programming-abstraction-liskov[http://www.infoq.com/presentations/programming-abstraction-liskov]
+*** http://www.infoq.com/presentations/Architecture-Without-an-End-State[http://www.infoq.com/presentations/Architecture-Without-an-End-State]
+*** https://www.youtube.com/watch?v=79hrNLm6S7k[https://www.youtube.com/watch?v=79hrNLm6S7k]
+*** https://www.youtube.com/watch?v=d0HVjoTD\_ro[https://www.youtube.com/watch?v=d0HVjoTD\_ro]
+*** https://www.youtube.com/watch?v=WWjJE-6Ln24[https://www.youtube.com/watch?v=WWjJE-6Ln24]
+*** https://www.youtube.com/watch?v=Q9hKeA06j-w[https://www.youtube.com/watch?v=Q9hKeA06j-w]
+*** http://vimeo.com/10073301[http://vimeo.com/10073301]
+*** https://www.youtube.com/watch?v=Z6f9ckEElsU[https://www.youtube.com/watch?v=Z6f9ckEElsU]
+** Personen
+*** Stefan Tilkov
+*** Michael Stal
+*** Kelly Sommers
+*** Clemens Vasters
+*** Michael Nygard
+*** Werner Vogels
+*** Simon Brown
+*** Uncle Bob Martin
+*** Udi Dahan
+*** Michael Nygard
+*** Martin Fowler
+*** Kevlin Henney
+** Sonstiges
+*** http://amturing.acm.org/byyear.cfm[http://amturing.acm.org/byyear.cfm]
+** Guava
+*** http://www.infoq.com/presentations/Guava[http://www.infoq.com/presentations/Guava]
+* http://virtualjug.com/[http://virtualjug.com/]
+* http://blog.arungupta.me/[http://blog.arungupta.me/]
+* http://zeroturnaround.com/[http://zeroturnaround.com/]
+** JRebel
+** XRebel

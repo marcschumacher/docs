@@ -1,0 +1,4 @@
+= XML
+
+* Problems with the signature in a XSD may be caused by the parser (eg. jaxb for Maven) trying to resolve a remote http
+address which is used inisde the XSD file. You can fix this by removing the DTD part of inside the XSD file.

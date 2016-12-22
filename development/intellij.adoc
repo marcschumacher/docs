@@ -1,0 +1,59 @@
+= IntelliJ
+
+== Keyboard
+
+The following shortcuts apply to an Apple Macintosh:
+
+* Close all tool windows: `Shift-Cmd-F12`
+* New file: `Ctrl-Alt-N`
+* Format with Jalopy: `Shift-Command-F11`
+* Organize Imports: `Ctrl-Alt-O`
+* Action: `Cmd-Shift-A`
+* Navigate files/tool windows: `Ctrl-Tab`
+* Switch between tabs: `Ctrl-&lt;Arrow left/right&gt;`
+* Jump from project tool window to editor: `Cmd-&lt;Array down&gt;`
+* Show problem popup: `Cmd-F1`
+* Resize tool window: `Cmd-Shift-&lt;Arrow&gt;`
+* Switch to tool window: `Ctrl-Tab`
+* Block comment: `Cmd--`
+* Fullscreen: `Cmd-Shift-F12`
+* Recent files: `Cmd-E`
+* Recent edited files: `Cmd-Shift-E`
+* Go to editor from Project Tab: ``Cmd-Arrow down``` or`F4`
+* Create new file/folder/whatever from editor: `Ctrl-Alt-N`
+* Extend selection: `Alt-Up`
+* Reduce selection `Alt-Down`
+* Clipboard history: `Shift-Cmd-V`
+* Add multiple cursors: `Alt-Shift-Click`
+* Select word under cursor: `Ctrl-G`, also select next and others that are found by using the shortcut again, being able to edit the found instances
+* Select word under cursor and all occurrences inside file: `Ctrl-Cmd-G`
+* Auto intent selection: `Ctrl-Alt-I`
+* Format code selection: `Alt-Cmd-L`
+* Language injection: `Alt-Enter` / Inject language
+* Complete current statement: `Cmd-Shift-Enter`
+* Terminal: `Alt-F12`
+* Version control: `Ctrl-V`
+* Remove whitespaces and pull up line: `Alt-Entf`
+
+== Tips
+
+* Use ⇧⌘F7 (Edit | Find | Highlight Usages in File) to quickly highlight usages of some variable in the current file. Use ⌘G and ⇧⌘G keys to navigate through highlighted usages. Press ⎋ to remove highlighting.
+* Press ⌃⇧Q (View | Context Info) to see the declaration of the current method without the need to scroll to it.
+* ⌘E (View | Recent Files) brings a popup list of the recently visited files. Choose the desired file and press Enter to open it. Besides recent files, you can bring up results of the usage searches you have performed recently. To do that, use the same ⌘E shortcut with the Find tool window having the focus, and select the desired find usages result from the Recent Find Usages popup.
+* Use F2/⇧F2 keys to jump between highlighted syntax errors. Use ⌥⌘↑/⌥⌘↓ shortcuts to jump between compiler error messages or search operation results. To skip warnings right click on the validation side bar / marker bar and choose Go to high priority problems only.
+* Use ⌃↑ and ⌃↓ keys to quickly move between methods in the editor.
+* ⌃⇧J shortcut joins two lines into one and removes unnecessary space to match your code style.
+* Use the ⇧⌘V shortcut to choose and insert recent clipboard contents into the text.
+* Use ⇧⌘⏎ to complete a current statement such as if, do-while, try-catch, return (or a method call) into a syntactically correct construct (e.g. add curly braces).
+* Quicklists: Preferences/Appearence &amp; Behaviour/Quicklist
+* Enable wrapping when reaching right margin by changing „Editor/Code Style/Wrap when typing reaches right margin“ in preferences
+
+== Other
+
+* Increase memory (https://www.jetbrains.com/idea/help/increasing-memory-heap.html[Jetbrains-Page]):
+Copy `/Applications/IntelliJ IDEA.app/Contents/bin/idea.vmoptions` to `~/Library/Preferences/IntelliJIdeaXX/idea.vmoptions` and modify accordingly
+* Change the JDK under which IntelliJ runs: https://intellij-support.jetbrains.com/hc/en-us/articles/206827547-Selecting-the-JDK-version-the-IDE-will-run-under[https://intellij-support.jetbrains.com/hc/en-us/articles/206827547-Selecting-the-JDK-version-the-IDE-will-run-under]
+* To remove the annoying dialog for asking for incoming network traffic under MacOS, enter the following on the command line:
+`sudo codesign --force --deep --sign - /Applications/IntelliJ\ IDEA\ 14.app`
+* Logfiles can be found here:
+`~/Library/Logs/IntelliJIdea14/idea.log`

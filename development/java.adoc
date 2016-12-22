@@ -1,0 +1,17 @@
+= Java
+
+== I/O
+
+* Path manipulation: `java.nio.file.Paths`
+
+== Logging
+
+* Change loglevel in properties: `logging.level.&lt;paketname&gt;=&lt;Loglevel&gt;`
+
+== Best practices
+
+* Never return `null` for Collection types, but return an empty Collection! The caller can do whatever he wanted to do with the collection without having to check for null and have any special case handling.
+
+== Static codeanalysis
+
+* My Checkstyle does not fail during the maven build though it should: add <violationSeverity>warning</violationSeverity>

@@ -1,0 +1,12 @@
+= Postgres
+
+== Basic commands
+
+* List all available databases: `\\l oder \\list`
+
+* List all tables in the database: `\\dt`
+* Describe specified table: `\\d+ \&lt;table\&gt;`
+
+== SQL
+
+* Select element in HSTORE (e.g. for SELECT): `<HSTORE column> -> '<key in HSTORE>'`

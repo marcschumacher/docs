@@ -1,0 +1,78 @@
+= Installation OpenPGP onto Yubikey neo on MacOS X
+
+Big parts of the description were adopted from the German blog entry https://www.unitas-network.de/wissenswertes/anleitungen/smartcards/yubikey-neo-initialisieren[https://www.unitas-network.de/wissenswertes/anleitungen/smartcards/yubikey-neo-initialisieren].
+
+== Preconditions
+
+The following software needs to be installed upfront: `git`, `curl`, `ant`, `gpg`. You can use either Homebrew or Macports to do that. For Homebrew use the following command:
+`brew install git curl ant`
+Further more install the Mac GPG tools which can be found here: https://gpgtools.org[https://gpgtools.org]. *Do not install gpg via Homebrew or MacPorts, this will obviously not work.* (see http://support.gpgtools.org/discussions/problems/11470-smart-card-access[http://support.gpgtools.org/discussions/problems/11470-smart-card-access])
+
+== Preparing the card for OpenPGP
+
+. Install the https://developers.yubico.com/yubikey-personalization/Releases/ykpers-1.17.1-mac.zip[Command line personalization tools]: simply extract and put the contents into an appropriate folder. Then add the `bin` folder to your `PATH`, e.g. inside your `~/.bashrc` or `~/.zshrc`. The same applies for the `share/man` folder: add this to your `MANPATH` environment variable in the mentioned startup scripts. Then restart your shell or `source` your startup script to get the new settings.
+. Now you should have the tools at hand. Type `ykpersonalize -m82` to activate the CCID mode. You will be asked to confirm with the key `y`. Do that!
+. Unplug and replug the card so that the system recognizes the new mode.
+. You now can check the card status in gpg, type `gpg --card-status`. You should get the following or similiar output:
+➜ gpg –card-status
+Application ID …: D2760001240102000006036381950000
+Version ……….: 2.0
+Manufacturer …..: Yubico
+Serial number ….: 03638195
+Name of cardholder: link:[nicht gesetzt]
+Language prefs …: link:[nicht gesetzt]
+Sex …………..: unbestimmt
+URL of public key : link:[nicht gesetzt]
+Login data …….: link:[nicht gesetzt]
+Signature PIN ….: zwingend
+Key attributes …: 2048R 2048R 2048R
+Max. PIN lengths .: 127 127 127
+PIN retry counter : 3 3 3
+Signature counter : 0
+Signature key ….: link:[none]
+Encryption key….: link:[none]
+Authentication key: link:[none]
+General key info..: link:[none]
+
+== Building the applet for your device
+
+It absolutely makes sense to rebuild the applet on your device to match your device ID. Yubikey does not do that in the factory setting. There you have a fixed ID which is all the same on all keys. To personalize that perform the following steps:
+1. Create a new directory on your disk where we can put the required files, e.g. `~/tmp/yubikey-pgp`
+ `mkdir -p ~/tmp/yubikey-pgp`
+2. Navigate to the previously created directory and download ykneo-openpgp:
+ `git clone https://github.com/Yubico/ykneo-openpgp.git`
+3. Now you need to download the Java Card Development Kit 2.2.2 from http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javame-419430.html[http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javame-419430.html], select the kit for Linux (`java_card_kit-2_2_2-linux.zip`). MacOS should already have extracted the file, so that now you should have a folder `java_card_kit-2_2_2-linux` containing the extracted files. Put it in your `~/tmp/yubikey-pgp` folder.
+4. Now navigate to `~/tmp/yubikey-pgp/java_card_kit-2_2_2-linux/java_card_kit-2_2_2` and unzip the file `java_card_kit-2_2_2-rr-bin-linux-do.zip`:
+ `cd ~/tmp/yubikey-pgp/java_card_kit-2_2_2-linux/java_card_kit-2_2_2`
+ `unzip -d java_card_kit-2_2_2-rr-bin-linux-do java_card_kit-2_2_2-rr-bin-linux-do.zip `
+5. Next find out the serial number of your key by typing `ykinfo -H`. You will get a hex code (after `serial_hex:`, write this down.
+6. Navigate back to `~/tmp/yubikey-pgp/ykneo-openpgp` :
+ `cd ~/tmp/yubikey-pgp/ykneo-openpgp`
+7. Change the hex code in the `build.xml` file to match your devices serial. Find the property `APPLET_AID`and change the hex value starting from the 12th byte. One byte with the serial you have written down in step 5. The default values you find here are `0x00:0x00:0x01`. In my case I replaced
+ `&lt;property name=&quot;APPLET_AID&quot; value=&quot;0xd2:0x76:0x00:0x01:0x24:0x01:0x02:0x00:0x00:0x00:0x00:0x00:0x00:0x01:0x00:0x00&quot;/&gt;` with
+ `&lt;property name=&quot;APPLET_AID&quot; value=&quot;0xd2:0x76:0x00:0x01:0x24:0x01:0x02:0x00:0x00:0x00:0x00:0x37:0x83:0xb3:0x00:0x00&quot;/&gt;`
+8. Now you can build the files in ant:
+ `ant -DJAVACARD_HOME=../java_card_kit-2_2_2-linux/java_card_kit-2_2_2/java_card_kit-2_2_2-rr-bin-linux-do/`
+9. The relevant created file can be found here:
+ `~/tmp/yubikey-pgp/ykneo-openpgp/applet/bin/openpgpcard/javacard/openpgpcard.cap`
+
+== Install the files on the yubikey
+
+For installation you need the Global Platform shell.
+1. Download the archive containing the shell from http://sourceforge.net/projects/globalplatform/[http://sourceforge.net/projects/globalplatform/]. The current version is 1.4.4, so in this instructions I will refer to the file `gpshell-1.4.4.tar.gz`. When you download the file, MacOS automatically should extract it, but not fully. You need to extract the tar part manually by clicking on the file. The result will be the folder `gpsshell-1.4.4` which you now should move to `~/tmp/yubikey-pgp/`.
+2. Now navigate to this folder:
+ `cd ~/tmp/yubikey-pgp/gpsshell-1.4.4`
+3. Set the relevant library path so all libraries are found for compilation:
+ `export DYLD_LIBRARY_PATH=/opt/local/lib`
+
+== Hints
+
+* Further information on building the OpenPGP applet can be found in the https://github.com/Yubico/ykneo-openpgp/tree/master/doc[docs] folder of ``ykneo-openpgp```.
+* 
+
+If your yubikey shall not be recognized, disable secure input for your terminal (this applies to both Apple Terminal or iTerm, see https://github.com/Yubico/yubikey-personalization/issues/34[https://github.com/Yubico/yubikey-personalization/issues/34]).
+
+== Other software
+
+* http://yubi.co/NEOMgrMac[Neo Manager]
+* https://itunes.apple.com/us/app/yubikey-personalization-tool/id638161122?mt=12[Graphical personalization tool (Mac App Store)]

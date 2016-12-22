@@ -1,0 +1,7 @@
+= MacOS
+
+* To display notifications via command line you can use the tool `terminal-notifier` which can be found here: https://github.com/julienXX/terminal-notifier[https://github.com/julienXX/terminal-notifier]. It is best to install the ruby gem to be able to easily execute the command with `terminal-notifier <parameters>`
+* Watch filesystem for changes in files or directories: use `fswatch`, install it using Homebrew: `brew install fswatch`, see http://stackoverflow.com/questions/1515730/is-there-a-command-like-watch-or-inotifywait-on-the-mac[http://stackoverflow.com/questions/1515730/is-there-a-command-like-watch-or-inotifywait-on-the-mac]
+* Install GNU sed with Homebrew: `brew install gnu-sed`
+* Monitor file system: `sudo fs_usage -w`
+* To update software from the Appstore using the command line, use the command: `sudo softwareupdate -iva`

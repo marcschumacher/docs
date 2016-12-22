@@ -1,0 +1,29 @@
+= Shellscripting
+
+== Allgemeines
+
+=== Spezielle Variablen
+
+* `$#` stores the number of command-line arguments that were passed to the shell program
+* `$?` stores the exit value of the last command that was executed
+* `$0` stores the first word of the entered command (the name of the shell program)
+* `$*` stores all the arguments that were entered on the command line ($1 $2 …)
+* `$@` stores all the arguments that were entered on the command line, individually quoted ("$1" "$2" …)
+
+== ZSH
+
+* Change the word delimiter by modifing the environment variable `WORDCHARS`. Default value is "`*?_-.[]=/&;!#$%^(){}&lt;&gt;`"
+
+== SSH
+
+* To remove a single entry from the `~/.ssh/known_hosts` file, use `ssh-keygen -R <hostname>`
+* If you have not yet connected to another computer using SSH, you are asked to verify the finger print. As this requires
+user interaction, this is not always wanted behaviour eg. for automated scripts. Disable this behaviour by using the following
+command: `ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no <hostname>`
+`UserKnownHostsFile` prevents the host to be added to the list of known hosts.
+
+== Misc
+
+* Use the command `watch` to periodically call a command again and again and show the output on the screen, eg. to see the size of a file: `watch ls -lh`
+* You can check the (usual lengthly) process of the command `dd` by sending an `-INFO` signal to the process: `killall -INFO dd`
+* To be able to see a remote display, set the environment variable `DISPLAY` accordingly. Use `export DISPLAY=:0.0` for the bash shell.

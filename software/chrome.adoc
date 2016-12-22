@@ -1,0 +1,3 @@
+= Chrome
+
+* Switch to not check for self signed certificates: `chrome-browser -test-type --ignore-certificate-errors`
