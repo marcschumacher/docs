@@ -15,3 +15,7 @@
 == Static codeanalysis
 
 * My Checkstyle does not fail during the maven build though it should: add <violationSeverity>warning</violationSeverity>
+
+== Functional programming
+
+* nice functional framework to extend core Java8 functionalities: http://javaslang.io
