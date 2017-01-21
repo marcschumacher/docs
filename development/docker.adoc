@@ -1,0 +1,4 @@
+# Docker
+
+* To use the shell inside a Docker container use the following command:
+`docker exec -i -t <image-name> /bin/bash`
