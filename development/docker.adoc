@@ -1,4 +1,6 @@
 # Docker
 
-* To use the shell inside a Docker container use the following command:
+* To use the shell inside a Docker container which is already running use the following command:
 `docker exec -i -t <image-name> /bin/bash`
+* To start up a docker image with starting a shell, use the following command:
+`docker run -t -i <image-name> bin/bash`
