@@ -4,3 +4,4 @@
 `docker exec -i -t <image-name> /bin/bash`
 * To start up a docker image with starting a shell, use the following command:
 `docker run -t -i <image-name> bin/bash`
+* Remove all docker container: `docker stop $(docker ps -a -q)`
