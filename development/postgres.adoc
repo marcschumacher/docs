@@ -11,3 +11,4 @@
 
 * Select element in HSTORE (e.g. for SELECT): `<HSTORE column> -> '<key in HSTORE>'`
 * Execute a stored procedure with a custom type: `SELECT mySproc(ROW(col1, col2, col3, col4, col5)::my_custom_type)`
+* Find current transactions: `SELECT * FROM pg_stat_activity`
