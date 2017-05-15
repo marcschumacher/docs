@@ -51,3 +51,7 @@
 * Remove a local branch: `git branch -d <local branch>`
 
 * To remove a single (local) file from the repo use the parameter `--cached`, ie. `git rm --cached myfile.txt` for files or `git rm --cached -r mydirectory` for folders
+
+== GitHub
+
+* Browser extensions: https://github.com/showcases/github-browser-extensions
