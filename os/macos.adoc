@@ -5,3 +5,11 @@
 * Install GNU sed with Homebrew: `brew install gnu-sed`
 * Monitor file system: `sudo fs_usage -w`
 * To update software from the Appstore using the command line, use the command: `sudo softwareupdate -iva`
+
+== Change settings for Finder
+* Show full file path in Finder:
+    `defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder`
+* Eliminate the Dock Reveal Delay
+** No animation: `defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock`
+** Super-fast animation: `defaults write com.apple.dock autohide-time-modifier -float 0.12;killall Dock`
+** Revert to default: `defaults delete com.apple.dock autohide-time-modifier;killall Dock`
