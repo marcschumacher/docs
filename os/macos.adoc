@@ -5,6 +5,7 @@
 * Install GNU sed with Homebrew: `brew install gnu-sed`
 * Monitor file system: `sudo fs_usage -w`
 * To update software from the Appstore using the command line, use the command: `sudo softwareupdate -iva`
+* To mount sshfs onto Mac use: `brew cask install osxfuse; brew install sshfs`, see https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh
 
 == Change settings for Finder
 * Show full file path in Finder:

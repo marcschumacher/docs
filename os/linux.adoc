@@ -3,6 +3,7 @@
 == Networking
 
 * alternative `traceroot` with Curses interface: `sudo mtr <hostname>`
+* Check if an application is accepting connections on a port: `nc -vz <address> <port>`
 
 == Shellscripting
 
