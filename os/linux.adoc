@@ -16,8 +16,9 @@
 
 == crontab
 
-* Test a cronjob: `run-parts -v --test /etc/crontab`
-
+* Test a cronjob:
+** `run-parts -v --test /etc/crontab`
+** `/bin/sh -c "(export PATH=/usr/bin:/bin; /path-to-my-script/my-script.sh </dev/null)"`
 
 == Tools
 
