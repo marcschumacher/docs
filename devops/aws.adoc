@@ -1,0 +1,7 @@
+= Amazon web service
+
+* Use the following command to create a parameter inside the parameter store:
+`aws ssm put-parameter --name <name of the key> --description <description for the key> --value <actual value of the key> --type SecureString --key-id alias/<alias of the encryption key>`
+* Use the following command to retrieve a (decrypted) parameter from the parameter store:
+`aws ssm get-parameter --name <name of the key> --with-decryption`
+* `aws cloudformation delete-stack --stack-name ame-prod && aws cloudformation wait stack-delete-complete --stack-name ame-prod && aws cloudformation create-stack --stack-name ame-prod --template-body file://src/main/aws-cloud-formation/04-prod.yaml && aws cloudformation wait stack-create-complete --stack-name ame-prod && echo "UPDATE COMPLETE!"`

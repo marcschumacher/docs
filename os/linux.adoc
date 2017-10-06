@@ -5,12 +5,19 @@
 * alternative `traceroot` with Curses interface: `sudo mtr <hostname>`
 * Check if an application is accepting connections on a port: `nc -vz <address> <port>`
 
+
 == Shellscripting
 
 * Redirect all output to `/dev/null`: `<myprogram> &> /dev/null`
 * Find out the path of the script: `realpath $0` or `$(dirname $(readlink -f $0))`
 * Use default value if a value is not existing: `MY_VARIABLE=$(EMPTY_VARIABLE:-123)` means: if `$EMPTY_VARIABLE` does not have a value, assign `123` (not `-123`!).
 * Use Pipeviewer `pv` (see http://www.ivarch.com/programs/pv.shtml) for progress bar of long running tasks using pipes
+
+
+== crontab
+
+* Test a cronjob: `run-parts -v --test /etc/crontab`
+
 
 == Tools
 

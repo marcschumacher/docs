@@ -6,6 +6,7 @@
 
 * List all tables in the database: `\\dt`
 * Describe specified table: `\\d+ \&lt;table\&gt;`
+* Connect via command line: `psql -U <user> -h <host> <db-instance>`
 
 == SQL
 
@@ -13,3 +14,4 @@
 * Execute a stored procedure with a custom type:
   `SELECT mySproc(ROW(col1, col2, col3, col4, col5)::my_custom_type)`
 * Find current transactions: `SELECT * FROM pg_stat_activity`
+* Remove all tables inside a schema: `DROP SCHEMA public CASCADE; CREATE SCHEMA public;`
