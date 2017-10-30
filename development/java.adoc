@@ -19,3 +19,9 @@
 == Functional programming
 
 * nice functional framework to extend core Java8 functionalities: http://javaslang.io
+
+== Connections
+
+* Default timeout (both connect and read timeouts) are infinite. Change the system timeouts by using the following keys:
+** `-Dsun.net.client.defaultConnectTimeout=TimeoutInMiliSec` and
+** `-Dsun.net.client.defaultReadTimeout=TimeoutInMiliSec`

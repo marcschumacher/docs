@@ -1,0 +1,43 @@
+= json
+
+== jq
+
+* Pretty print a json file: `cat <file>|jq '.'`
+* Remove the annoying double quotes when extracting data -> use the `-r` option for raw text
+* Find a certain entitiy in a json file and print another entry inside that entity:
++
+[source,bash]
+----
+cat <file>|jq -r '.AutoScalingGroups[] | select(.AutoScalingGroupName|contains("ame-auto-scaling-group")).AutoScalingGroupName'
+----
+
+* Filter for certain entities in a json file and build a new json output with certain values:
++
+[source,bash]
+----
+cat <file>|jq ''
+----
+
+* Select elements which do not contain a certain value:
++
+[source,bash]
+----
+cat <file>|jq '.notifications[] | select(contains("trex") | not)'
+----
+Selects only elements for which a string "trex" can be found in the array "notifications".
+
+* Remove elements which contain a certain string:
++
+[source,bash]
+----
+cat <file>|jq 'del(.notifications[] | select(contains("trex")))'
+----
+Returns the json file without entries inside the array "notifications" which contain the text "trex".
+
+* Remove elements which do not contain a certain string:
++
+[source,bash]
+----
+cat <file>|jq 'del(.notifications[] | select(contains("trex") | not))'
+----
+Returns the json file only with entries inside the array "notifications" which contain the text "trex".
